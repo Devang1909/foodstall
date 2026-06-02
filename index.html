@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Stall - Jay Babari</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>    
+    <h2>Food Stall</h2>
+    <p>Taste jo dil jeet le</p>
+</header>
+
+<div class="search-container">
+    <button class="home-btn" >Home</button>
+    <input type="text" id="searchInput" placeholder="Search...">
+</div>
+
+<section class="products" id="product-list"></section>
+
+
+
+<div class="cart-section">
+    <div style="font-size: 15px;">
+        🛒 Cart: <span id="cart-count">0</span> | Total: ₹<span id="total-price">0</span>
+    </div>
+<button class="buy-btn" id="buyNowBtn">Buy Now</button>
+    <button class="cancel-btn" id="cancelOrderBtn" onclick="cancelOrder()">Cancel Order</button>
+    <div id="cart-items" style="max-height: 200px; overflow-y: auto; text-align: left; margin-top: 10px;">show add items</div>
+</div>
+
+<div id="order-overlay" >
+    <div id="order-form" >
+        <h3>Buyer Details</h3>
+        <input type="text" id="cust-name" placeholder="તમારું નામ">
+        <input type="number" id="cust-mobile" placeholder="મોબાઇલ નંબર">
+
+        <input type="text" id="cust-address" placeholder="સરનામું">
+        
+        <div class="payment-section">
+            <label>💳 Payment Method:</label>
+            <label><input type="radio" name="payment" value="UPI" checked> UPI</label>
+            <label><input type="radio" name="payment" value="COD"> Cash on Delivery</label>
+        </div>
+        
+        <button class="WhatsApp-btn" onclick="submitOrder()">WhatsApp Order</button>
+
+        <button onclick="closeOrderForm()" style="margin-top:10px; background:grey; color:white; border:none; padding:8px; width:100%; border-radius: 5px;">Cancel</button>
+    </div>
+</div>
+<script src="script.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>
